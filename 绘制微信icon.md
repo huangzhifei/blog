@@ -32,6 +32,7 @@ IB_DESIGNABLE
 ![2.png](http://img.blog.csdn.net/20150825212301999)
 
 在*Show the Attributes inspector*上看到下图：
+
 ![3.png](http://img.blog.csdn.net/20150825212321338)
 
 现在改变一下bkColor,将它改为灰色。
