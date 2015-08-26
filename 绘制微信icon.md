@@ -32,10 +32,12 @@ IB_DESIGNABLE
 ![2.png](http://img.blog.csdn.net/20150825212301999)
 
 在*Show the Attributes inspector*上看到下图：
+_ _ _
 
 ![3.png](http://img.blog.csdn.net/20150825212321338)
 
 现在改变一下bkColor,将它改为灰色。
+
 ![4.png](http://img.blog.csdn.net/20150825212335473)
 
 改后当然是看不到视图改变的，我们得真正的为 `backgoundColor` 这个属性赋值；或者使用Core Graphices来填充背景。方法一中如果想时时看到改变效果，我们可以添加如下代码：
@@ -117,6 +119,7 @@ IB_DESIGNABLE
 ![绘制三角形](http://img.blog.csdn.net/20150825220746948)
 
 注释掉后即可看到：
+
 ![去掉三角形边框](http://img.blog.csdn.net/20150825220812478)
 
 ###绘制眼睛###
@@ -128,6 +131,7 @@ IB_DESIGNABLE
     CGContextFillEllipseInRect(context, CGRectMake(greenX + gcFR-eyesWidth1, greenY+gcH/4, eyesWidth1, eyesWidth1));
 ```
 然后就是这样了：
+
 ![绘制眼睛](http://img.blog.csdn.net/20150825220847437)
 
 ###绘制白色icon###
@@ -173,11 +177,13 @@ OK,现在就长这样了，咋一看还是挺像的哈。
 CGContextSetShadowWithColor(context, CGSizeMake(-0.5, 0.5), 6, [UIColor blackColor].CGColor);
 ```
 ![加阴影](http://img.blog.csdn.net/20150825220956167)
+
 阴影是加上了，但是并不是我们想要的效果。怎样才能让它只是在边缘上加阴影呢？也很简单，继续在刚才添加的语句下添加：
 ```Objective-C
 CGContextBeginTransparencyLayer(context, nil);
 ```
 ![修正阴影](http://img.blog.csdn.net/20150825221026316)
+
 搞定，感觉还行哈，不过眼睛的阴影好像也没了。试试用同样的方法看能不能解决：在第3步画眼睛之前添加：
 ```Objective-C
 	CGContextEndTransparencyLayer(context);
